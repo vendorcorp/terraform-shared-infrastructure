@@ -1,0 +1,43 @@
+output "availability_zones" {
+  value = data.aws_availability_zones.available.names
+}
+
+output "vpc_id" {
+  value = data.aws_vpc.selected.id
+}
+
+output "vpc_cidr" {
+  value = data.aws_vpc.selected.cidr_block
+}
+
+output "public_subnet_ids" {
+  value = data.aws_subnet_ids.public.ids
+}
+
+output "public_subnet_ids_az_map" {
+  value = { for k, v in data.aws_subnet.public : v.availability_zone => k }
+}
+
+output "private_subnet_ids" {
+  value = data.aws_subnet_ids.private.ids
+}
+
+output "private_subnet_ids_az_map" {
+  value = { for k, v in data.aws_subnet.private : v.availability_zone => k }
+}
+
+output "public_subnet_cidrs" {
+  value = [for s in data.aws_subnet.public : s.cidr_block]
+}
+
+output "private_subnet_cidrs" {
+  value = [for s in data.aws_subnet.private : s.cidr_block]
+}
+
+output "eks_cluster_id" {
+  value = data.aws_eks_cluster.vendorcorp_eks_cluster.id
+}
+
+output "eks_cluster_arn" {
+  value = data.aws_eks_cluster.vendorcorp_eks_cluster.arn
+}
