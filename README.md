@@ -36,6 +36,7 @@ module "shared_infrastructure" {
 | public_subnet_ids_az_map  | Map of public subnet IDs in SI VPC keyed by Availability Zone  |
 | vpc_cidr                  | VPC CIDR range for SI environment                              |
 | vpc_id                    | VPC ID for SI environment                                      |
+| zone_vendorcorp_internal  | ARN of Hosted DNS Zone for Vendor Corp Internal DNS            |
 
 
 # The Fine Print
