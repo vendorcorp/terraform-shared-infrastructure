@@ -41,3 +41,12 @@ output "eks_cluster_id" {
 output "eks_cluster_arn" {
   value = data.aws_eks_cluster.vendorcorp_eks_cluster.arn
 }
+
+output "dns_zone_internal_arn" {
+  value = data.aws_route53_zone.zone_vendorcorp_internal.arn
+}
+
+output "dns_zone_internal_name" {
+  value = data.aws_route53_zone.zone_vendorcorp_internal.name
+}
+

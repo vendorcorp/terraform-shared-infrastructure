@@ -40,3 +40,8 @@ data "aws_subnet" "public" {
 data "aws_eks_cluster" "vendorcorp_eks_cluster" {
   name = "vendorcorp-us-east-2-wDOI3pOv"
 }
+
+data "aws_route53_zone" "zone_vendorcorp_internal" {
+  name         = "vendorcorp.internal"
+  private_zone = true
+}
