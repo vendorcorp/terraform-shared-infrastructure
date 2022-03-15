@@ -65,3 +65,7 @@ output "dns_zone_public_arn" {
 output "dns_zone_public_name" {
   value = data.aws_route53_zone.zone_vendorcorp_public.name
 }
+
+output "namespace_shared_core_name" {
+  value = data.kubernetes_namespace.namespace_shared_core.metadata.name
+}

@@ -52,8 +52,13 @@ data "aws_route53_zone" "zone_vendorcorp_internal" {
   private_zone = true
 }
 
-
 data "aws_route53_zone" "zone_vendorcorp_public" {
   name         = "vendorcorp.net"
   private_zone = false
+}
+
+data "kubernetes_namespace" "namespace_shared_core" {
+  metadata {
+    name = "shared-core"
+  }
 }
