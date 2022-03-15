@@ -53,3 +53,15 @@ output "dns_zone_internal_arn" {
 output "dns_zone_internal_name" {
   value = data.aws_route53_zone.zone_vendorcorp_internal.name
 }
+
+output "dns_zone_public_id" {
+  value = data.aws_route53_zone.zone_vendorcorp_public.zone_id
+}
+
+output "dns_zone_public_arn" {
+  value = data.aws_route53_zone.zone_vendorcorp_public.arn
+}
+
+output "dns_zone_public_name" {
+  value = data.aws_route53_zone.zone_vendorcorp_public.name
+}

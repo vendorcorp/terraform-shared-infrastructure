@@ -51,3 +51,9 @@ data "aws_route53_zone" "zone_vendorcorp_internal" {
   name         = "vendorcorp.internal"
   private_zone = true
 }
+
+
+data "aws_route53_zone" "zone_vendorcorp_public" {
+  name         = "vendorcorp.net"
+  private_zone = false
+}
