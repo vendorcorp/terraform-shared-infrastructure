@@ -11,7 +11,7 @@ output "vpc_cidr" {
 }
 
 output "public_subnet_ids" {
-  value = data.aws_subnet_ids.public.ids
+  value = data.aws_subnets.public.ids
 }
 
 output "public_subnet_ids_az_map" {
@@ -19,7 +19,7 @@ output "public_subnet_ids_az_map" {
 }
 
 output "private_subnet_ids" {
-  value = data.aws_subnet_ids.private.ids
+  value = data.aws_subnets.private.ids
 }
 
 output "private_subnet_ids_az_map" {
