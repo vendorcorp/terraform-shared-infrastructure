@@ -44,7 +44,7 @@ data "aws_subnet" "public" {
 }
 
 data "aws_eks_cluster" "vendorcorp_eks_cluster" {
-  name = "vendorcorp-us-east-2-wDOI3pOv"
+  name = var.default_eks_cluster_name
 }
 
 data "aws_route53_zone" "zone_vendorcorp_internal" {
@@ -57,8 +57,13 @@ data "aws_route53_zone" "zone_vendorcorp_public" {
   private_zone = false
 }
 
+provider "kubernetes" {
+  config_path    = "~/.kube/config"
+  config_context = data.aws_eks_cluster.vendorcorp_eks_cluster.arn
+}
+
 data "kubernetes_namespace" "namespace_shared_core" {
   metadata {
-    name = "shared-core"
+    name = var.default_namespace_name_shared_core
   }
 }
