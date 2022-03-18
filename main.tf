@@ -58,7 +58,7 @@ data "aws_route53_zone" "zone_vendorcorp_public" {
 }
 
 data "aws_acm_certificate" "vendorcorp" {
-  domain   = "*.corp.vendorcorp.net"
+  domain   = "*.vendorcorp.net"
   statuses = ["ISSUED"]
   types    = ["AMAZON_ISSUED"]
 }
