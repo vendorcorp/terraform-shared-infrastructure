@@ -57,16 +57,10 @@ data "aws_route53_zone" "zone_vendorcorp_public" {
   private_zone = false
 }
 
-provider "aws" {
-  alias  = "virginia"
-  region = "us-east-1"
-}
-
 data "aws_acm_certificate" "vendorcorp" {
   domain   = "*.corp.vendorcorp.net"
   statuses = ["ISSUED"]
   types    = ["AMAZON_ISSUED"]
-  provider = aws.virginia
 }
 
 provider "kubernetes" {
