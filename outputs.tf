@@ -69,3 +69,7 @@ output "dns_zone_public_name" {
 output "namespace_shared_core_name" {
   value = data.kubernetes_namespace.namespace_shared_core.metadata[index(data.kubernetes_namespace.namespace_shared_core.metadata.*.name, var.default_namespace_name_shared_core)].name
 }
+
+output "vendorcorp_net_cert_arn" {
+  value = data.aws_acm_certificate.vendorcorp.arn
+}

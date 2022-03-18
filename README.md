@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 module "shared_infrastructure" {
-  source = "git::ssh://git@github.com/vendorcorp/terraform-shared-infrastructure.git?ref=v0.0.5"
+  source = "git::ssh://git@github.com/vendorcorp/terraform-shared-infrastructure.git?ref=v0.1.2"
   environment = var.environment
 }
 ```
@@ -25,26 +25,27 @@ Currently - we only have one environment - production!
 
 ## Outputs
 
-| Name                       | Description                                                             |
-| -------------------------- | ----------------------------------------------------------------------- |
-| availability_zones         | List of available AZs in SI environment                                 |
-| dns_zone_internal_arn      | ARN of the Hosted DNS Zone for internal Vendor Corp                     |
-| dns_zone_internal_id       | ID of the Hosted DNS Zone for internal Vendor Corp                      |
-| dns_zone_internal_name     | DNS name of the Hosted DNS Zone for internal Vendor Corp                |
-| dns_zone_public_arn        | ARN of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)      |
-| dns_zone_public_id         | ID of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)       |
-| dns_zone_public_name       | DNS name of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net) |
-| eks_cluster_arn            | ARN of the Vendor Corp EKS Cluster                                      |
-| eks_cluster_id             | ID of the Vendor Corp EKS Cluster                                       |
-| namespace_shared_core_name | Name of the Kubernetes Namespace where Shared Core applications run     |
-| private_subnet_cidrs       | List of private subnet CIDR ranges in SI VPC                            |
-| private_subnet_ids         | List of private subnet IDs in SI VPC                                    |
-| private_subnet_ids_az_map  | Map of private subnet IDs in SI VPC keyed by Availability Zone          |
-| public_subnet_cidrs        | List of public subnet CIDR ranges in SI VPC                             |
-| public_subnet_ids          | List of public subnet IDs in SI VPC                                     |
-| public_subnet_ids_az_map   | Map of public subnet IDs in SI VPC keyed by Availability Zone           |
-| vpc_cidr                   | VPC CIDR range for SI environment                                       |
-| vpc_id                     | VPC ID for SI environment                                               |
+| Name                       | Description                                                                |
+| -------------------------- | -------------------------------------------------------------------------- |
+| availability_zones         | List of available AZs in SI environment                                    |
+| dns_zone_internal_arn      | ARN of the Hosted DNS Zone for internal Vendor Corp                        |
+| dns_zone_internal_id       | ID of the Hosted DNS Zone for internal Vendor Corp                         |
+| dns_zone_internal_name     | DNS name of the Hosted DNS Zone for internal Vendor Corp                   |
+| dns_zone_public_arn        | ARN of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)         |
+| dns_zone_public_id         | ID of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)          |
+| dns_zone_public_name       | DNS name of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)    |
+| eks_cluster_arn            | ARN of the Vendor Corp EKS Cluster                                         |
+| eks_cluster_id             | ID of the Vendor Corp EKS Cluster                                          |
+| namespace_shared_core_name | Name of the Kubernetes Namespace where Shared Core applications run        |
+| private_subnet_cidrs       | List of private subnet CIDR ranges in SI VPC                               |
+| private_subnet_ids         | List of private subnet IDs in SI VPC                                       |
+| private_subnet_ids_az_map  | Map of private subnet IDs in SI VPC keyed by Availability Zone             |
+| public_subnet_cidrs        | List of public subnet CIDR ranges in SI VPC                                |
+| public_subnet_ids          | List of public subnet IDs in SI VPC                                        |
+| public_subnet_ids_az_map   | Map of public subnet IDs in SI VPC keyed by Availability Zone              |
+| vendorcorp_net_cert_arn    | ARN of public certification for *.corp.vendorcorp.net and *.vendorcorp.net |
+| vpc_cidr                   | VPC CIDR range for SI environment                                          |
+| vpc_id                     | VPC ID for SI environment                                                  |
 
 
 # The Fine Print
