@@ -1,3 +1,6 @@
+################################################################################
+# AWS Networking Data
+################################################################################
 output "availability_zones" {
   value = data.aws_availability_zones.available.names
 }
@@ -34,6 +37,9 @@ output "private_subnet_cidrs" {
   value = [for s in data.aws_subnet.private : s.cidr_block]
 }
 
+################################################################################
+# AWS EKS Data
+################################################################################
 output "eks_cluster_id" {
   value = data.aws_eks_cluster.vendorcorp_eks_cluster.id
 }
@@ -42,6 +48,9 @@ output "eks_cluster_arn" {
   value = data.aws_eks_cluster.vendorcorp_eks_cluster.arn
 }
 
+################################################################################
+# AWS Route53 (DNS) Data
+################################################################################
 output "dns_zone_internal_id" {
   value = data.aws_route53_zone.zone_vendorcorp_internal.zone_id
 }
@@ -66,10 +75,39 @@ output "dns_zone_public_name" {
   value = data.aws_route53_zone.zone_vendorcorp_public.name
 }
 
-output "namespace_shared_core_name" {
-  value = data.kubernetes_namespace.namespace_shared_core.metadata[index(data.kubernetes_namespace.namespace_shared_core.metadata.*.name, var.default_namespace_name_shared_core)].name
-}
-
+################################################################################
+# AWS Certificate Data
+################################################################################
 output "vendorcorp_net_cert_arn" {
   value = data.aws_acm_certificate.vendorcorp.arn
+}
+
+################################################################################
+# Amazonn RDS (for PostgreSQL) Data
+################################################################################
+output "pgsql_cluster_arn" {
+  value = data.aws_rds_cluster.postgres.arn
+}
+
+output "pgsql_cluster_endpoint_read" {
+  value = data.aws_rds_cluster.postgres.reader_endpoint
+}
+
+output "pgsql_cluster_endpoint_write" {
+  value = data.aws_rds_cluster.postgres.endpoint
+}
+
+output "pgsql_cluster_master_username" {
+  value = data.aws_rds_cluster.postgres.master_username
+}
+
+output "pgsql_cluster_port" {
+  value = data.aws_rds_cluster.postgres.port
+}
+
+################################################################################
+# Kubernetes Data
+################################################################################
+output "namespace_shared_core_name" {
+  value = data.kubernetes_namespace.namespace_shared_core.metadata[index(data.kubernetes_namespace.namespace_shared_core.metadata.*.name, var.default_namespace_name_shared_core)].name
 }

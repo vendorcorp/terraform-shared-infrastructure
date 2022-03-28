@@ -15,3 +15,9 @@ variable "default_namespace_name_shared_core" {
   type        = string
   default     = "shared-core"
 }
+
+variable "default_postgres_rds_cluster_name" {
+  description = "Name of the RDS PostgreSQL cluster"
+  type        = string
+  default     = "vendorcorp-us-east-2-zyvcdawk"
+}
