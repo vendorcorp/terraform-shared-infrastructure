@@ -48,6 +48,10 @@ output "eks_cluster_arn" {
   value = data.aws_eks_cluster.vendorcorp_eks_cluster.arn
 }
 
+output "eks_cluster_oidc_issuer" {
+  value = data.aws_eks_cluster.vendorcorp_eks_cluster.identity[0].oidc[0].issuer
+}
+
 ################################################################################
 # AWS Route53 (DNS) Data
 ################################################################################

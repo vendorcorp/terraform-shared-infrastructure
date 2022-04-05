@@ -36,6 +36,7 @@ Currently - we only have one environment - production!
 | dns_zone_public_name          | DNS name of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)    |
 | eks_cluster_arn               | ARN of the Vendor Corp EKS Cluster                                         |
 | eks_cluster_id                | ID of the Vendor Corp EKS Cluster                                          |
+| eks_cluster_oidc_issuer       | OIDC Issuer URL for Vendor Corp EKS Cluste                                 |
 | namespace_shared_core_name    | Name of the Kubernetes Namespace where Shared Core applications run        |
 | pgsql_cluster_arn             | ARN of the Vendor Corp PostgreSQL Cluster (Amazon Aurora RDS)              |
 | pgsql_cluster_endpoint_read   | Read enpoint for Vendor Corp PostgreSQL Cluster                            |
