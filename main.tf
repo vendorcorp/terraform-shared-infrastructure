@@ -50,6 +50,10 @@ data "aws_eks_cluster" "vendorcorp_eks_cluster" {
   name = var.default_eks_cluster_name
 }
 
+data "aws_iam_openid_connect_provider" "vendorcorp_eks_cluster_oidc" {
+  url = data.aws_eks_cluster.vendorcorp_eks_cluster.identity[0].oidc[0].issuer
+}
+
 data "aws_route53_zone" "zone_vendorcorp_internal" {
   name         = "vendorcorp.internal"
   private_zone = true
