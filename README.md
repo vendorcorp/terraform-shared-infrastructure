@@ -35,6 +35,7 @@ Currently - we only have one environment - production!
 | dns_zone_public_id            | ID of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)          |
 | dns_zone_public_name          | DNS name of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)    |
 | eks_cluster_arn               | ARN of the Vendor Corp EKS Cluster                                         |
+| eks_cluster_security_group_id | Main Security Group for the Vendor Corp EKS Cluster |
 | eks_cluster_id                | ID of the Vendor Corp EKS Cluster                                          |
 | eks_cluster_oidc_issuer       | OIDC Issuer URL for Vendor Corp EKS Cluster                                |
 | eks_cluster_oidc_provider_arn | ARN of the OIDC Provider for the Vendor Corp EKS Cluster                   |
