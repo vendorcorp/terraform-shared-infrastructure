@@ -80,12 +80,14 @@ provider "kubernetes" {
 
 ################################################################################
 # Kubernetes Data
+#
+# WARNING: Cyclical Dependency on core-kubernetes repo
 ################################################################################
-data "kubernetes_namespace" "namespace_shared_core" {
-  metadata {
-    name = var.default_namespace_name_shared_core
-  }
-}
+# data "kubernetes_namespace" "namespace_shared_core" {
+#   metadata {
+#     name = var.default_namespace_name_shared_core
+#   }
+# }
 
 ################################################################################
 # PostgreSQL Data

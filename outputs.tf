@@ -119,7 +119,9 @@ output "pgsql_cluster_port" {
 
 ################################################################################
 # Kubernetes Data
+# 
+# WARNING: Cyclical Dependency on core-kubernetes repo
 ################################################################################
-output "namespace_shared_core_name" {
-  value = data.kubernetes_namespace.namespace_shared_core.metadata[index(data.kubernetes_namespace.namespace_shared_core.metadata.*.name, var.default_namespace_name_shared_core)].name
-}
+# output "namespace_shared_core_name" {
+#   value = data.kubernetes_namespace.namespace_shared_core.metadata[index(data.kubernetes_namespace.namespace_shared_core.metadata.*.name, var.default_namespace_name_shared_core)].name
+# }
