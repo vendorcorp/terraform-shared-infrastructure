@@ -9,54 +9,59 @@ provider "aws" {
   region = var.region
 }
 
-module "shared_infrastructure" {
-  source = "git::ssh://git@github.com/vendorcorp/terraform-shared-infrastructure.git?ref=v0.6.0"
+module "shared" {
+  source = "git::ssh://git@github.com/vendorcorp/terraform-shared-infrastructure.git?ref=v1.0.0"
   environment = var.environment
 }
 ```
 
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.60.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_eks_cluster.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster) | data source |
+| [aws_eks_clusters.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_clusters) | data source |
+| [aws_iam_openid_connect_provider.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_openid_connect_provider) | data source |
+| [aws_rds_cluster.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/rds_cluster) | data source |
+| [aws_rds_clusters.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/rds_clusters) | data source |
+
 ## Inputs
 
-Currently - we only have one environment - production!
-
-| Name        | Description                |  Type  | Default | Required |  Options   |
-| ----------- | -------------------------- | :----: | :-----: | :------: | :--------: |
-| environment | Infrastructure environment | string |   ``    |   yes    | production |
+No inputs.
 
 ## Outputs
 
-| Name                          | Description                                                                |
-| ----------------------------- | -------------------------------------------------------------------------- |
-| availability_zones            | List of available AZs in SI environment                                    |
-| dns_zone_internal_arn         | ARN of the Hosted DNS Zone for internal Vendor Corp                        |
-| dns_zone_internal_id          | ID of the Hosted DNS Zone for internal Vendor Corp                         |
-| dns_zone_internal_name        | DNS name of the Hosted DNS Zone for internal Vendor Corp                   |
-| dns_zone_public_arn           | ARN of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)         |
-| dns_zone_public_id            | ID of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)          |
-| dns_zone_public_name          | DNS name of the Hosted DNS Zone for public Vendor Corp (vendorcorp.net)    |
-| eks_cluster_arn               | ARN of the Vendor Corp EKS Cluster                                         |
-| eks_cluster_security_group_id | Main Security Group for the Vendor Corp EKS Cluster                        |
-| eks_cluster_id                | ID of the Vendor Corp EKS Cluster                                          |
-| eks_cluster_oidc_issuer       | OIDC Issuer URL for Vendor Corp EKS Cluster                                |
-| eks_cluster_oidc_provider_arn | ARN of the OIDC Provider for the Vendor Corp EKS Cluster                   |
-| pgsql_cluster_arn             | ARN of the Vendor Corp PostgreSQL Cluster (Amazon Aurora RDS)              |
-| pgsql_cluster_endpoint_read   | Read enpoint for Vendor Corp PostgreSQL Cluster                            |
-| pgsql_cluster_endpoint_write  | Write enpoint for Vendor Corp PostgreSQL Cluster                           |
-| pgsql_cluster_master_username | Master username for managing Vendor Corp PostgreSQL Cluster                |
-| pgsql_cluster_port            | Port to connect to Vendor Corp PostgreSQL Cluster on                       |
-| private_subnet_cidrs          | List of private subnet CIDR ranges in SI VPC                               |
-| private_subnet_ids            | List of private subnet IDs in SI VPC                                       |
-| private_subnet_ids_az_map     | Map of private subnet IDs in SI VPC keyed by Availability Zone             |
-| public_subnet_cidrs           | List of public subnet CIDR ranges in SI VPC                                |
-| public_subnet_ids             | List of public subnet IDs in SI VPC                                        |
-| public_subnet_ids_az_map      | Map of public subnet IDs in SI VPC keyed by Availability Zone              |
-| vendorcorp_net_cert_arn       | ARN of public certification for _.corp.vendorcorp.net and _.vendorcorp.net |
-| vpc_cidr                      | VPC CIDR range for SI environment                                          |
-| vpc_id                        | VPC ID for SI environment                                                  |
+| Name | Description |
+|------|-------------|
+| <a name="output_eks_cluster_arn"></a> [eks\_cluster\_arn](#output\_eks\_cluster\_arn) | n/a |
+| <a name="output_eks_cluster_id"></a> [eks\_cluster\_id](#output\_eks\_cluster\_id) | ############################################################################### AWS EKS Cluster ############################################################################### |
+| <a name="output_eks_cluster_oidc_issuer"></a> [eks\_cluster\_oidc\_issuer](#output\_eks\_cluster\_oidc\_issuer) | n/a |
+| <a name="output_eks_cluster_oidc_provider_arn"></a> [eks\_cluster\_oidc\_provider\_arn](#output\_eks\_cluster\_oidc\_provider\_arn) | n/a |
+| <a name="output_eks_cluster_security_group_id"></a> [eks\_cluster\_security\_group\_id](#output\_eks\_cluster\_security\_group\_id) | n/a |
+| <a name="output_pgsql_cluster_arn"></a> [pgsql\_cluster\_arn](#output\_pgsql\_cluster\_arn) | ############################################################################### AWS RDS Cluster ############################################################################### |
+| <a name="output_pgsql_cluster_endpoint_read"></a> [pgsql\_cluster\_endpoint\_read](#output\_pgsql\_cluster\_endpoint\_read) | n/a |
+| <a name="output_pgsql_cluster_endpoint_write"></a> [pgsql\_cluster\_endpoint\_write](#output\_pgsql\_cluster\_endpoint\_write) | n/a |
+| <a name="output_pgsql_cluster_master_username"></a> [pgsql\_cluster\_master\_username](#output\_pgsql\_cluster\_master\_username) | n/a |
+| <a name="output_pgsql_cluster_port"></a> [pgsql\_cluster\_port](#output\_pgsql\_cluster\_port) | n/a |
+
 
 # The Fine Print
 
-At the time of writing I work for Sonatype, and it is worth nothing that this is **NOT SUPPORTED** bu Sonatype - it is purely a contribution to the open source community (read: you!).
+At the time of writing I work for Sonatype, and it is worth nothing that this is **NOT SUPPORTED** by Sonatype - it is purely a contribution to the open source community (read: you!).
 
 Remember:
 
