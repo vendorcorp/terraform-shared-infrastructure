@@ -25,21 +25,21 @@ output "eks_cluster_oidc_provider_arn" {
 # AWS RDS Cluster
 ################################################################################
 output "pgsql_cluster_arn" {
-  value = data.aws_rds_cluster.vendorcorp.arn
+  value = length(data.aws_rds_cluster.vendorcorp) > 0 ? data.aws_rds_cluster.vendorcorp[0].arn : null
 }
 
 output "pgsql_cluster_endpoint_read" {
-  value = data.aws_rds_cluster.vendorcorp.reader_endpoint
+  value = length(data.aws_rds_cluster.vendorcorp) > 0 ? data.aws_rds_cluster.vendorcorp[0].reader_endpoint : null
 }
 
 output "pgsql_cluster_endpoint_write" {
-  value = data.aws_rds_cluster.vendorcorp.endpoint
+  value = length(data.aws_rds_cluster.vendorcorp) > 0 ? data.aws_rds_cluster.vendorcorp[0].endpoint : null
 }
 
 output "pgsql_cluster_master_username" {
-  value = data.aws_rds_cluster.vendorcorp.master_username
+  value = length(data.aws_rds_cluster.vendorcorp) > 0 ? data.aws_rds_cluster.vendorcorp[0].master_username : null
 }
 
 output "pgsql_cluster_port" {
-  value = data.aws_rds_cluster.vendorcorp.port
+  value = length(data.aws_rds_cluster.vendorcorp) > 0 ? data.aws_rds_cluster.vendorcorp[0].port : null
 }
