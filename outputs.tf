@@ -43,3 +43,8 @@ output "pgsql_cluster_master_username" {
 output "pgsql_cluster_port" {
   value = length(data.aws_rds_cluster.vendorcorp) > 0 ? data.aws_rds_cluster.vendorcorp[0].port : null
 }
+
+output "pgsql_cluster_master_password" {
+  value = length(data.aws_rds_cluster.vendorcorp) > 0 ? jsondecode(data.aws_secretsmanager_secret_version.current[0].secret_string).password : null
+  sensitive = true
+}

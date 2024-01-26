@@ -38,6 +38,9 @@ No modules.
 | [aws_iam_openid_connect_provider.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_openid_connect_provider) | data source |
 | [aws_rds_cluster.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/rds_cluster) | data source |
 | [aws_rds_clusters.vendorcorp](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/rds_clusters) | data source |
+| [aws_secretsmanager_secret.secret](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret) | data source |
+| [aws_secretsmanager_secret_version.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret_version) | data source |
+| [aws_secretsmanager_secrets.secrets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secrets) | data source |
 
 ## Inputs
 
@@ -55,6 +58,7 @@ No inputs.
 | <a name="output_pgsql_cluster_arn"></a> [pgsql\_cluster\_arn](#output\_pgsql\_cluster\_arn) | ############################################################################### AWS RDS Cluster ############################################################################### |
 | <a name="output_pgsql_cluster_endpoint_read"></a> [pgsql\_cluster\_endpoint\_read](#output\_pgsql\_cluster\_endpoint\_read) | n/a |
 | <a name="output_pgsql_cluster_endpoint_write"></a> [pgsql\_cluster\_endpoint\_write](#output\_pgsql\_cluster\_endpoint\_write) | n/a |
+| <a name="output_pgsql_cluster_master_password"></a> [pgsql\_cluster\_master\_password](#output\_pgsql\_cluster\_master\_password) | n/a |
 | <a name="output_pgsql_cluster_master_username"></a> [pgsql\_cluster\_master\_username](#output\_pgsql\_cluster\_master\_username) | n/a |
 | <a name="output_pgsql_cluster_port"></a> [pgsql\_cluster\_port](#output\_pgsql\_cluster\_port) | n/a |
 
